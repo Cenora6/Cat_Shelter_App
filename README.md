@@ -3,7 +3,7 @@
 ## Description:
 A basic app for a cat shelter used to show and filter all the cats in a shelter.
 
-![](src/images/preview.png)
+![](images/preview.png)
 
 ## Technologies:
 - HTML5
