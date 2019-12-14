@@ -14,13 +14,13 @@ const kitties = [
 
 class SearchBar extends Component {
 
-    handlerCheckBox = () => {
+    handleCheckBox = () => {
         if (typeof this.props.changeBox === 'function') {
             this.props.changeBox();
         }
     };
 
-    handlerSearch  = (event) => {
+    handleSearch  = (event) => {
         if (typeof this.props.filterText === 'function') {
             this.props.filterText(event.target.value);
         }
@@ -28,9 +28,9 @@ class SearchBar extends Component {
 
     render() {
         return <form>
-            <input type = 'text' placeholder = "Search..." onChange = {this.handlerSearch}/>
+            <input type = 'text' placeholder = "Search..." onChange = {this.handleSearch} value={this.props.filter}/>
             <p>
-                <input type = 'checkbox' checked = {this.props.likesKids} onChange = {this.handlerCheckBox}/>
+                <input type = 'checkbox' checked = {this.props.likesKids} onChange = {this.handleCheckBox}/>
                 <span>Only show kitties that likes kids</span>
             </p>
         </form>
@@ -45,12 +45,12 @@ class CatTable extends Component {
         let filters = this.props.filter;
         let checkBox = this.props.likesKids;
 
-        this.props.kitties.forEach(function(kitty) {
+        this.props.kitties.forEach((kitty) => {
             if(kitty.category !== lastCategory) {
-                rows.push(<CatCategoryRow category = {kitty.category} key = {kitty.category} />);
+                rows.push(<CatCategoryRow category={kitty.category} key={kitty.category} />);
             }
 
-            if(((kitty.name.includes(filters) && filters.length > 2) || filters.length < 3) && (kitty.likesKids === true || checkBox === false)) {
+            if(((kitty.name.includes(filters))) && (kitty.likesKids === true || checkBox === false)) {
                 rows.push(<CatRow kitty = {kitty} key = {kitty.name} />);
             }
 
@@ -73,9 +73,11 @@ class CatTable extends Component {
 
 class CatCategoryRow extends React.Component {
     render() {
-        return <tr>
-            <th colSpan="2" className="tableHeader"> {this.props.category}</th>
-        </tr>
+        return (
+            <tr>
+                <th colSpan="2" className="tableHeader">{this.props.category}</th>
+            </tr>
+        )
     }
 }
 
@@ -114,6 +116,7 @@ class App extends Component {
     };
 
     render() {
+
         return <div className="appBox">
             <img src={catPhoto} alt="kot"/>
             <SearchBar filter = {this.state.filterText} likesKids = {this.state.likesKids}
