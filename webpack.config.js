@@ -4,12 +4,12 @@ const Html = require('html-webpack-plugin');
  
 module.exports = {
   entry: [
-    "whatwg-fetch", // polyfill dla fetch
-    "./js/app.js", // główny plik aplikacji
+    "whatwg-fetch",
+    "./js/app.js",
   ],
   output: { 
-    filename: "js/out.js", // ścieżka pliku wyjscia
-    path: path.resolve(__dirname, "build") //zapisuj wszystko w ./build
+    filename: "js/out.js",
+    path: path.resolve(__dirname, "build")
   },
   devServer: {
     port: 3001,
@@ -17,64 +17,51 @@ module.exports = {
   module: {
     rules: [
 
-      // js!
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-          // options: {
-          //   presets: [
-          //     'env', // transpiluj szystko zgodnie z ustawieniami
-          //            // w pliku .browserlistrc definiujemy wsparcie urządzeń
-          //            // https://github.com/browserslist/browserslist              
-          //     'stage-2', // wspracie dla inicjalizatora właściwości
-          //     'react', // jsx -> js
-          //   ]
-          // }
         }
       },
 
-      // scss
       {
         test: /\.scss$/,
         use: [
-          'style-loader', // dopisz do strony css za pomocą <style/>
-          'css-loader', // odczytaj css
+          'style-loader',
+          'css-loader',
           {
             loader: "postcss-loader",
             options: {
               plugins: () => [
-                require("autoprefixer")() // w pliki .browserlistrc definiujemy przeglądarki
+                require("autoprefixer")()
               ],
             },
           },
-          'sass-loader', // zamien scss -> css
+          'sass-loader',
         ]
       },
 
-      // obrazy
       {
         test: /\.(jpg|jpeg|gif|png)$/,
         use: {
           loader: 'file-loader',
           options: {
-            name: '[name].[ext]', // definiuje jak mają się nazywać pliki w ./dist
-            publicPath: 'images', // dodaj do ścieżki w kodzie
-            outputPath: 'images', // ścieżka kopiowania obrazów
+            name: '[name].[ext]',
+            publicPath: 'images',
+            outputPath: 'images',
           }
         }
       },
 
-      //fonty
       {
         test: /\.(eot|ttf|woff|woff2)$/,
         use: {
           loader: 'file-loader',
           options: {
-            name: '[name].[ext]',  // definiuje jak mają się nazywać pliki w ./dist
-            publicPath: 'fonts', // dodaj do ścieżki w kodzie
-            outputPath: 'fonts', // ścieżka kopiowania obrazów
+            name: '[name].[ext]',
+            publicPath: 'fonts',
+            outputPath: 'fonts',
           }
         }
       },
@@ -83,8 +70,8 @@ module.exports = {
 
   plugins: [
     new Html({
-        filename: 'index.html', // nazwa pliku w katalogu ./build
-        template: './index.html', // szablon na podstawie, którego ma być utworzony plik
+        filename: 'index.html',
+        template: './index.html',
     })
   ]
-}
+};
