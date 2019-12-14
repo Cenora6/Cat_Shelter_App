@@ -1,0 +1,68 @@
+.appBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: 'Comfortaa', cursive;
+
+  form {
+    position:  absolute;
+    top: 7rem;
+    right: -2rem;
+    width: 50rem;
+
+    input[type="text"] {
+      width: 50%;
+      height: 2rem;
+      margin-bottom: 2rem;
+      padding-left: 1rem;
+      font-family: 'Comfortaa', cursive;
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+      padding-left: 1rem;
+
+      span {
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  img {
+    position: absolute
+  }
+
+  .mainTable {
+    position:  absolute;
+    top: 17rem;
+    right: 20rem;
+    width: 30rem;
+    height: 20rem;
+    border: 2px dashed darkgoldenrod;
+    font-size: 1.5rem;
+  }
+
+  .tableHeader {
+    color: #803e48;
+    background-color: #ffe2b5;
+    height: 10%;
+  }
+
+  thead {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    th {
+      padding: 1rem 0;
+      width: 60%;
+    }
+  }
+
+  td {
+    padding: 1rem 2rem;
+  }
+
+}
