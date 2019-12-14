@@ -1,6 +1,7 @@
 # Cat Shelter App
 
 ## Description:
+![](src/images/catApp.jpg)
 A basic app for a cat shelter used to show and filter all the cats in a shelter.
 
 ## Technologies:
