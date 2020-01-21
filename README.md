@@ -1,7 +1,11 @@
 # Cat Shelter App
 
 ## Description:
-A basic app for a cat shelter used to show and filter all the cats in a shelter.
+A basic app for a cat shelter used to show and filter all the cats in a shelter. 
+The application lets you:
+- search cat based on their age and sex
+- find all cats who like children
+- search for the cat's name
 
 ![](images/preview.png)
 
