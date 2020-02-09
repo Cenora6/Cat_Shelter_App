@@ -7,7 +7,7 @@ The application lets you:
 - find all cats who like children
 - search for the cat's name
 
-![](images/preview.png)
+![](images/previewPhoto.png)
 
 ## Technologies:
 - HTML5 
