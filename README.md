@@ -10,7 +10,7 @@ The application lets you:
 ![](images/preview.png)
 
 ## Technologies:
-- HTML5
+- HTML5 
 - CSS
 - SASS
 - JavaScript
