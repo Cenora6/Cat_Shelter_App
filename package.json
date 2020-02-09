@@ -1,12 +1,15 @@
 {
-  "name": "CatShelterApp",
+  "name": "cat_shelter_app",
   "version": "1.0.0",
-  "description": "## Cat Shelter App",
+  "description": "Cat Shelter App",
   "main": "webpack.config.js",
+  "homepage": "http://Cenora6.github.io/Cat-Shelter-App/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -p",
-    "start": "webpack-dev-server --hot --inline -d"
+    "start": "webpack-dev-server --hot --inline -d",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -34,7 +37,8 @@
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.9.0",
+    "gh-pages": "^2.2.0"
   },
   "repository": {
     "type": "git",
@@ -42,6 +46,5 @@
   },
   "bugs": {
     "url": "https://github.com/Cenora6/Cat_Shelter_App/issues"
-  },
-  "homepage": "https://github.com/Cenora6/Cat_Shelter_App#readme"
+  }
 }

@@ -7,8 +7,8 @@
 
   form {
     position:  absolute;
-    top: 7rem;
-    right: -2rem;
+    top: 12rem;
+    right: -11rem;
     width: 50rem;
 
     input[type="text"] {
@@ -36,19 +36,20 @@
   }
 
   img {
-    position: absolute
+    position: absolute;
+    opacity: 0.7;
   }
 
   .mainTable {
     position:  absolute;
-    top: 17rem;
-    right: 20rem;
-    width: 30rem;
-    border: 2px dashed darkgoldenrod;
+    top: 22rem;
+    right: 0;
+    width: 50rem;
     font-size: 1.5rem;
     border-collapse: separate;
     border-spacing: 2px;
     border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   .tableHeader {
@@ -64,11 +65,18 @@
     background-color: #b8a59a;
 
     th {
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
       padding: 1rem 0;
       width: 60%;
       height: 100%;
+
+      &:first-of-type {
+        border-top-left-radius: 20px;
+      }
+
+      &:last-of-type {
+
+        border-top-right-radius: 20px;
+      }
     }
   }
 

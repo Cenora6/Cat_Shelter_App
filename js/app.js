@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import '../sass/main.scss';
-import catPhoto from './../images/cat.jpg'
+import catPhoto from './../images/cat.jpeg'
 
 const kitties = [
     {category: "male", age: "4", likesKids: true, name: "Fidel Catstro"},
@@ -118,7 +118,7 @@ class App extends Component {
     render() {
 
         return <div className="appBox">
-            <img src={catPhoto} alt="kot"/>
+            <img src={catPhoto} alt="cat"/>
             <SearchBar filter = {this.state.filterText} likesKids = {this.state.likesKids}
                        changeBox = {this.changeBox} filterText = {this.changeFilterText}/>
             <CatTable kitties = {this.props.kitties} filter = {this.state.filterText}
