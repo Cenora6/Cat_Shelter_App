@@ -11,9 +11,7 @@ The application lets you:
 
 ## Technologies:
 - HTML5 
-- CSS
 - SASS
-- JavaScript
 - React
 - Webpack
 
